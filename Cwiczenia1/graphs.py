@@ -2,8 +2,10 @@ lines = [line.rstrip('\n') for line in open('graph.txt')]
 levels = []
 matrix = []
 edges = []
+temp = []
 consequent = []
 counter = 0
+thisdict={}
 
 for i in lines:
     levels.append(i.count('1'))
@@ -21,7 +23,7 @@ for idx, i in enumerate(max(matrix)):
         print(idx)
 
 # Zadanie 3
-print("Wypisuje, między jakimi wierzcholkami sa krawedzie: ")
+print("Wypisuje, miedzy jakimi wierzcholkami sa krawedzie: ")
 for idx, s in enumerate(matrix):
     for inx, n in enumerate(s):
         if (int(idx) <= int(inx)):
@@ -41,11 +43,13 @@ print(incidentMatrix)
 
 # Zadanie 5
 
-print("Wypisuje liste następników: ")
+print("Wypisuje liste nastepnikow: ")
 for idx, i in enumerate(matrix):
-    print("Następniki dla ",idx," : ")
+    del temp[:]
     for inx, n in enumerate(i):
-        if  n =='1':
-            print(inx)
+        if n == '1':
+            temp.append(inx)
+    thisdict[idx] = temp[:]
 
 
+print thisdict
