@@ -11,6 +11,7 @@ for i in lines:
     levels.append(i.count('1'))
     matrix.append(i.split(' '))
 
+
 # Zadanie 1
 print("Stopnie kolejnych wiercholkow: ")
 for idx, i in enumerate(levels):
